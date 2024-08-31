@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlift</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            height: 80vh;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .video {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video video {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            max-height: 281px;
+            object-fit: cover;
+        }
+        .details {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        .details h1 {
+            color: #d64f3f;
+            margin-bottom: 20px;
+        }
+        .details h2 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .details p {
+            line-height: 1.6;
+            color: #5a4e4e;
+            margin-top: 10px;
+        }
+        .details ul {
+            padding-left: 20px;
+        }
+        .details ul li {
+            margin-bottom: 10px;
+        }
+        .options {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .options a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #d64f3f;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .options a:hover {
+            background-color: #b43a30;
+        }
+        .details a {
+            display: inline-block;
+            padding: 10px;
+            color: #d64f3f;
+            text-decoration: none;
+            border: 1px solid #d64f3f;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .details a:hover {
+            background-color: #d64f3f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video">
+            <video controls>
+                <source src="{{ url_for('static', filename='Deadlift.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="details">
+            <h1>Deadlift</h1>
+            <p>The deadlift is a fundamental strength exercise that targets the back, glutes, and hamstrings. Follow this guide to perform it correctly:</p>
+            
+            <h2>How to Perform the Deadlift</h2>
+            <p><strong>1. Set Up:</strong> Stand with your feet hip-width apart and the barbell over the middle of your feet. Bend at the hips and knees to grasp the bar with an overhand grip, hands slightly wider than shoulder-width.</p>
+            <p><strong>2. Lift the Barbell:</strong> Engage your core and push through your heels as you lift the barbell by extending your hips and knees. Keep your back straight and chest up throughout the movement.</p>
+            <p><strong>3. Lower the Barbell:</strong> Reverse the movement to lower the barbell back to the floor, maintaining control and keeping your back straight.</p>
+            <p><strong>4. Repetition:</strong> Repeat for the desired number of repetitions. Start with lighter weights to perfect your form before gradually increasing the load.</p>
+            
+            <h2>Benefits</h2>
+            <p>The deadlift provides several benefits:</p>
+            <ul>
+                <li><strong>Strengthens the Posterior Chain:</strong> Targets the back, glutes, and hamstrings, improving overall strength and stability.</li>
+                <li><strong>Enhances Core Strength:</strong> Requires core engagement to maintain stability and proper form.</li>
+                <li><strong>Improves Posture:</strong> Strengthens muscles that support proper posture and alignment.</li>
+                <li><strong>Increases Functional Strength:</strong> Improves the ability to perform everyday tasks that involve lifting and carrying.</li>
+            </ul>
+
+            <h2>Safety Tips</h2>
+            <p>To ensure a safe deadlifting experience:</p>
+            <ul>
+                <li><strong>Maintain Proper Form:</strong> Keep your back straight and avoid rounding your lower back. Use your legs to lift the weight, not your back.</li>
+                <li><strong>Start with Light Weights:</strong> Focus on mastering the technique before progressing to heavier weights.</li>
+                <li><strong>Warm Up:</strong> Perform a proper warm-up to prepare your muscles and joints for the lift.</li>
+                <li><strong>Use Proper Footwear:</strong> Wear supportive shoes to ensure stability and safety during the lift.</li>
+                <li><strong>Listen to Your Body:</strong> If you feel any discomfort or pain, stop the exercise and consult a fitness professional.</li>
+            </ul>
+            
+            <a href="/fitness_arena">Back to Fitness Arena</a>
+        </div>
+        <div class="options">
+            <div style="width:100%;height:0;padding-bottom:120%;position:relative;">
+            <iframe src="https://giphy.com/embed/96bSRJ07MfGeggTlV9" width="90%" height="80%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
+        <a href="/posture/deadlift_posture">Check Your Deadlift Posture</a>
+        </div>
+    </div>
+</body>
+</html>

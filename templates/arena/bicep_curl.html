@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicep Curls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            height: 80vh;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .video {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video video {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            max-height: 281px;
+            object-fit: cover;
+        }
+        .details {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        .details h1 {
+            color: #d64f3f;
+            margin-bottom: 20px;
+        }
+        .details h2 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .details p {
+            line-height: 1.6;
+            color: #5a4e4e;
+            margin-top: 10px;
+        }
+        .details ul {
+            padding-left: 20px;
+        }
+        .details ul li {
+            margin-bottom: 10px;
+        }
+        .options {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .options a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #d64f3f;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .options a:hover {
+            background-color: #b43a30;
+        }
+        .details a {
+            display: inline-block;
+            padding: 10px;
+            color: #d64f3f;
+            text-decoration: none;
+            border: 1px solid #d64f3f;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .details a:hover {
+            background-color: #d64f3f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video">
+            <video controls>
+                <source src="{{ url_for('static', filename='BicepCurls.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="details">
+            <h1>Bicep Curls</h1>
+            <p>Bicep curls are a fundamental exercise for targeting the biceps. Follow this guide to perform bicep curls effectively:</p>
+            
+            <h2>How to Perform Bicep Curls</h2>
+            <p><strong>1. Set Up:</strong> Stand with your feet shoulder-width apart and hold a dumbbell in each hand with your palms facing forward. Keep your elbows close to your torso.</p>
+            <p><strong>2. Curl the Weights:</strong> Bend your elbows to curl the dumbbells towards your shoulders. Keep your upper arms stationary and avoid using your back to lift the weights.</p>
+            <p><strong>3. Lower the Weights:</strong> Slowly lower the dumbbells back to the starting position, fully extending your arms.</p>
+            <p><strong>4. Repetition:</strong> Perform the exercise for the desired number of repetitions. Start with a weight that allows you to maintain proper form.</p>
+            
+            <h2>Benefits</h2>
+            <p>Bicep curls provide several benefits:</p>
+            <ul>
+                <li><strong>Strengthens Biceps:</strong> Targets and builds the biceps muscles, improving arm strength.</li>
+                <li><strong>Enhances Muscle Tone:</strong> Helps to define and tone the upper arms.</li>
+                <li><strong>Improves Grip Strength:</strong> Enhances grip strength, which can benefit other exercises and daily activities.</li>
+                <li><strong>Isolation Exercise:</strong> Allows you to isolate the biceps for focused training.</li>
+            </ul>
+
+            <h2>Safety Tips</h2>
+            <p>To ensure a safe bicep curl experience:</p>
+            <ul>
+                <li><strong>Use Proper Form:</strong> Keep your elbows stationary and avoid swinging your body to lift the weights.</li>
+                <li><strong>Start with Light Weights:</strong> Begin with lighter weights to master the technique before increasing the load.</li>
+                <li><strong>Warm Up:</strong> Perform a proper warm-up to prepare your muscles for the exercise.</li>
+                <li><strong>Focus on Controlled Movements:</strong> Perform each curl with control to maximize effectiveness and reduce risk of injury.</li>
+                <li><strong>Listen to Your Body:</strong> If you feel any discomfort or pain, stop and consult a fitness professional.</li>
+            </ul>
+            
+            <a href="/fitness_arena">Back to Fitness Arena</a>
+        </div>
+        <div class="options">
+            <div style="width:100%;height:0;padding-bottom:100%;position:relative;">
+            <iframe src="https://giphy.com/embed/kFnaSyOxFVVKFVOi9O" width="90%" height="80%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
+            <a href="/posture/bicep_curl_posture">Check Your Bicep Curl Form</a>
+        </div>
+    </div>
+</body>
+</html>

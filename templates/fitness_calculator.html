@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calculators</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="container py-4">
+    <h1 class="text-center mb-4">Fitness Calculators</h1>
+
+    <!-- BMI Calculator Form -->
+    <div class="calculator card mb-4 shadow-sm p-4">
+        <h2 class="card-title">BMI Calculator</h2>
+        <form id="bmiForm" class="mb-3">
+            <div class="mb-3">
+                <label for="weight" class="form-label">Weight (kg):</label>
+                <input type="number" class="form-control" id="weight" name="weight" step="0.1" required>
+            </div>
+            <div class="mb-3">
+                <label for="height" class="form-label">Height (cm):</label>
+                <input type="number" class="form-control" id="height" name="height" step="0.1" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <div id="bmiResult" class="alert alert-info" role="alert"></div>
+        <div id="bmiGraph"></div> <!-- Placeholder for BMI graph -->
+    </div>
+
+    <!-- Protein Intake Calculator Form -->
+    <div class="calculator card mb-4 shadow-sm p-4">
+        <h2 class="card-title">Protein Intake Calculator</h2>
+        <form id="proteinForm" class="mb-3">
+            <div class="mb-3">
+                <label for="weight_protein" class="form-label">Weight (kg):</label>
+                <input type="number" class="form-control" id="weight_protein" name="weight" step="0.1" required>
+            </div>
+            <div class="mb-3">
+                <label for="activity_level" class="form-label">Activity Level:</label>
+                <select id="activity_level" name="activity_level" class="form-select" required>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calculateProtein()">Calculate Protein Intake</button>
+        </form>
+        <div id="proteinResult" class="alert alert-info" role="alert"></div>
+        <div id="proteinGraph"></div> <!-- Placeholder for Protein graph -->
+    </div>
+
+    <!-- Calorie Calculator Form -->
+    <div class="calculator card mb-4 shadow-sm p-4">
+        <h2 class="card-title">Calorie Calculator</h2>
+        <form id="caloriesForm" class="mb-3">
+            <div class="mb-3">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender:</label>
+                <select id="gender" name="gender" class="form-select" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="weight_calories" class="form-label">Weight (kg):</label>
+                <input type="number" class="form-control" id="weight_calories" name="weight" step="0.1" required>
+            </div>
+            <div class="mb-3">
+                <label for="height_calories" class="form-label">Height (cm):</label>
+                <input type="number" class="form-control" id="height_calories" name="height" step="0.1" required>
+            </div>
+            <div class="mb-3">
+                <label for="activity_level_calories" class="form-label">Activity Level:</label>
+                <select id="activity_level_calories" name="activity_level" class="form-select" required>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calculateCalories()">Calculate Calories</button>
+        </form>
+        <div id="caloriesResult" class="alert alert-info" role="alert"></div>
+        <div id="caloriesGraph"></div> <!-- Placeholder for Calorie graph -->
+    </div>
+
+    <script>
+        function calculateBMI() {
+            var weight = $("#weight").val();
+            var height = $("#height").val();
+            $.post("/bmi", { weight: weight, height: height }, function(data) {
+                $("#bmiResult").html("Your BMI is: " + data.bmi.toFixed(2));
+                $("#bmiGraph").html('<img src="' + data.graph + '" alt="BMI Graph">');
+            });
+        }
+
+        function calculateProtein() {
+            var weight = $("#weight_protein").val();
+            var activity_level = $("#activity_level").val();
+            $.post("/protein", { weight: weight, activity_level: activity_level }, function(data) {
+                $("#proteinResult").html("Your daily protein intake should be: " + data.protein.toFixed(2) + " grams");
+                Plotly.newPlot('proteinGraph', JSON.parse(data.graph));
+            });
+        }
+
+        function calculateCalories() {
+            var age = $("#age").val();
+            var gender = $("#gender").val();
+            var weight = $("#weight_calories").val();
+            var height = $("#height_calories").val();
+            var activity_level = $("#activity_level_calories").val();
+            $.post("/calories", { age: age, gender: gender, weight: weight, height: height, activity_level: activity_level }, function(data) {
+                $("#caloriesResult").html("Your daily calorie needs are: " + data.calories.toFixed(2) + " kcal");
+                Plotly.newPlot('caloriesGraph', JSON.parse(data.graph));
+            });
+        }
+    </script>
+</body>
+</html>

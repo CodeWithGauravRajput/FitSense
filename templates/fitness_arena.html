@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Arena</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #222;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #d64f3f;
+            margin-bottom: 20px;
+        }
+        .exercise-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .exercise-item {
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f8f4f2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .exercise-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .exercise-item img {
+            width: 100%;
+            height: auto;
+        }
+        .exercise-item a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #d64f3f;
+            font-size: 18px;
+            background-color: #f8f4f2;
+            border-top: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Arena</h1>
+        <div class="exercise-list">
+            <!-- Exercise 1 -->
+            <div class="exercise-item">
+                <img src="images/deadlift.jpg" alt="Deadlift">
+                <a href="/arena/deadlift">Deadlift</a>
+            </div>
+            <!-- Exercise 2 -->
+            <div class="exercise-item">
+                <img src="images/bicep-curl.jpg" alt="Bicep Curl">
+                <a href="/arena/bicep_curl">Bicep Curl</a>
+            </div>
+            <!-- Exercise 3 -->
+            <div class="exercise-item">
+                <img src="images/bench-press.jpg" alt="Bench Press">
+                <a href="/arena/bench_press">Bench Press</a>
+            </div>
+            <!-- Exercise 4 -->
+            <div class="exercise-item">
+                <img src="images/push-ups.jpg" alt="Push-ups">
+                <a href="/arena/push_ups">Push-ups</a>
+            </div>
+            <!-- Exercise 5 -->
+            <div class="exercise-item">
+                <img src="images/squats.jpg" alt="Squats">
+                <a href="/arena/squats">Squats</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
