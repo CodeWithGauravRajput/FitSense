@@ -1,4 +1,4 @@
-magic_key="AIzaSyCMpHeGAZJrx_tBuFii9bISOAKhO98ET2U"
+magic_key="#"
 
 book_text = """ TRAINING & NUTRITION GUIDEI AM FOREVER FIT THE HOME HIIT GUIDEContents Let\'s get started1 Fuel your progress2 Supplements sorted3 T urn motivation 
 into dedication5The winning workouts4 Reasons your progress has plateaued6 7The final wordLet’s talk home fitness It might feel like 
