@@ -26,6 +26,4 @@ Achieve your fitness objectives with our comprehensive suite of calculators:
 - **Protein Intake Calculator**: Calculate the amount of protein you need to support muscle growth and recovery.
 
 
-## Contact
 
-Have questions or need support? Contact us at [support@fitsense.com](mailto:support@fitsense.com).
